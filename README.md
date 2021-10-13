@@ -1,5 +1,5 @@
 # spatium-server-spec
-The specification for the spatium server
+The specification for the spatium server version 1.1
 
 ## Format
 Data payloads will be sent as serialized JSON objects.
@@ -15,7 +15,7 @@ Each object will have the following properties
 | ------ | --------- | --------- | ------------------------------------------------------- | ---------------------------------------------------------------------------- |
 | 0.a    | heartbeat | C2S       |                                                         | Sent every 1000 milliseconds after the handshake.                            |
 | 0.b    | heartbeat | S2C       |                                                         | Sent as an immediate response to 0.a.                                        |
-| 1.a    | handshake | C2S       | `{username: string}`                                    | First payload sent by the client to establish authentication.                |
+| 1.a    | handshake | C2S       | `{username: string, version: string}`                   | First payload sent by the client to establish authentication.                |
 | 1.b    | handshake | S2C       | `{success: boolean, data?: BoardData, team?: number}`   | Sent as an immediate response to 1.a. Returns the success of the handshake.  |
 | 2.a    | ping      | C2S       |                                                         | Used to check the ping of the server between heartbeats.                     |
 | 2.b    | ping      | S2C       |                                                         | Sent as an immediate response to 2.a.                                        |
