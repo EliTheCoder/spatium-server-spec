@@ -56,7 +56,8 @@ let payload = {
       status: 0,
       initialState: "pppp/pppp",
       moves: []
-    }
+    },
+    team: 0
   }
 }
 
